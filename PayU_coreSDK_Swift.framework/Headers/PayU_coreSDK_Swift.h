@@ -2,8 +2,8 @@
 //  PayU_coreSDK_Swift.h
 //  PayU_coreSDK_Swift
 //
-//  Created by Ashish Kumar on 11/27/17.
-//  Copyright © 2017 PayU Payments Private Limited. All rights reserved.
+//  Created by Ashish Kumar on 1/17/18.
+//  Copyright © 2018 PayU Payments Private Limited. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
