@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target arm64-apple-ios8.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PayU_coreSDK_Swift
 import CoreTelephony
 import Darwin
@@ -8,7 +8,7 @@ import Foundation
 import Swift
 import SystemConfiguration
 import UIKit
-@objc @objcMembers public class PayUModelHashes : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class PayUModelHashes : ObjectiveC.NSObject {
   @objc public var paymentHash: Swift.Optional<Swift.String>
   @objc public var paymentRelatedDetailsHash: Swift.Optional<Swift.String>
   @objc public var VASForMobileSDKHash: Swift.Optional<Swift.String>
@@ -21,7 +21,7 @@ import UIKit
   @objc override dynamic public init()
   @objc deinit
 }
-@objc public class PUExtended : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers public class PUExtended : ObjectiveC.NSObject {
   public var bankID: Swift.String
   public var pgID: Swift.String
   public var ptPriority: Swift.String
@@ -44,10 +44,10 @@ import UIKit
   public var issuingBank: Swift.String
   public var nameOnCard: Swift.String
   public var card_cvv: Swift.String
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
-@objc public class PUOffer : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers public class PUOffer : ObjectiveC.NSObject {
   public var category: Swift.String
   public var discount: Swift.String
   public var errorCode: Swift.String
@@ -57,10 +57,10 @@ import UIKit
   public var OfferRemainingCount: Swift.String
   public var OfferType: Swift.String
   public var status: Swift.String
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
-@objc @objcMembers public class PayUModelPaymentParams : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class PayUModelPaymentParams : ObjectiveC.NSObject {
   @objc public var key: Swift.Optional<Swift.String>
   @objc public var amount: Swift.Optional<Swift.String>
   @objc public var txnId: Swift.Optional<Swift.String>
@@ -132,26 +132,26 @@ import UIKit
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @objcMembers public class PayUCreateRequest : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class PayUCreateRequest : ObjectiveC.NSObject {
   public typealias completionBlockForCreateRequestWithPaymentParam = (Foundation.NSMutableURLRequest, Foundation.NSString) -> Swift.Void
   @objc public func createRequest(withPaymentParam paymentParam: PayU_coreSDK_Swift.PayUModelPaymentParams, forPaymentType paymentType: Swift.String, withCompletionBlock paramCompletionBlock: @escaping PayU_coreSDK_Swift.PayUCreateRequest.completionBlockForCreateRequestWithPaymentParam)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 public typealias completionBlockAfterFetchingPaymentOptions = (PayU_coreSDK_Swift.PUPaymentRelatedDetails, Swift.String) -> Swift.Void
 public typealias completionBlockAfterCallingVAS = (Any, Swift.String) -> Swift.Void
 public typealias comletionBlockAfterGettingOfferDetails = (PayU_coreSDK_Swift.PUOffer, Swift.String) -> Swift.Void
 public typealias completionBlockAfterDeletingSavedCard = (Swift.String, Swift.String) -> Swift.Void
 public typealias completionBlockAfterGettingCardType = ([Swift.String : Swift.String], Swift.String) -> Swift.Void
-@objc @objcMembers public class PayUWebService : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class PayUWebService : ObjectiveC.NSObject {
   @objc public func fetchPayUPaymentOptions(paymentParamsToFetchPaymentOptions: PayU_coreSDK_Swift.PayUModelPaymentParams, completionBlockForPaymentOptions: @escaping PayU_coreSDK_Swift.completionBlockAfterFetchingPaymentOptions)
   @objc public func callVAS(paymentParamsforVas: PayU_coreSDK_Swift.PayUModelPaymentParams)
   @objc public func getVASStatus(bankCodeOrCardBin: Swift.String, completionBlockForVAS: @escaping PayU_coreSDK_Swift.completionBlockAfterCallingVAS)
   @objc public func getOfferStatus(paymentParamsForOfferAPI: PayU_coreSDK_Swift.PayUModelPaymentParams, completionBlockForOfferStatus: @escaping PayU_coreSDK_Swift.comletionBlockAfterGettingOfferDetails)
   @objc public func deleteSavedCard(paymentParamsForDeletingSavedCard: PayU_coreSDK_Swift.PayUModelPaymentParams, completionBlockForDeletingSavedCard: @escaping PayU_coreSDK_Swift.completionBlockAfterDeletingSavedCard)
   @objc public func getCardTypeDetails(cardBin: PayU_coreSDK_Swift.PayUModelPaymentParams, completionBlockForGettingCardData: @escaping PayU_coreSDK_Swift.completionBlockAfterGettingCardType)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 public let ENVIRONMENT_PRODUCTION: Swift.String
 public let ENVIRONMENT_TEST: Swift.String
@@ -175,7 +175,7 @@ public let COMMAND_GET_USER_CARD: Swift.String
 public let COMMAND_GET_CARD_DETAILS: Swift.String
 public var isCBExists: Swift.Bool
 public var enforcementPaymentCode: Swift.Bool
-@objc public class PUPaymentRelatedDetails : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PUPaymentRelatedDetails : ObjectiveC.NSObject {
   public var availablePaymentOptions: Foundation.NSMutableArray
   public var availableNetBanking: [Swift.AnyObject]
   public var availableCashCard: [Swift.AnyObject]
